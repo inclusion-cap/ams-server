@@ -6,6 +6,14 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+// Import sequelize
+const db = require("./models");
+// Import sequelize models
+const Admin = db.Admin;
+const Campaign = db.Campaign;
+const Submission = db.Submission;
+const Comment = db.Comment;
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
