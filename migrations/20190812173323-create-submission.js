@@ -15,7 +15,9 @@ module.exports = {
         type: Sequelize.JSON
       },
       status: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM({
+          values: ["NEW", "UNDER REVIEW", "REJECTED", "ACCEPTED"]
+        })
       },
       createdAt: {
         allowNull: false,

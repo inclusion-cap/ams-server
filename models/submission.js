@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       email: DataTypes.STRING,
       content: DataTypes.JSON,
-      status: DataTypes.ENUM
+      status: DataTypes.ENUM({
+        values: ["NEW", "UNDER REVIEW", "REJECTED", "ACCEPTED"]
+      })
     },
     {}
   );
