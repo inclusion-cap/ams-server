@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   Submission.associate = function(models) {
     // associations can be defined here
+    Submission.belongsTo(models.Campaign);
+    Submission.hasMany(models.Comment);
   };
   return Submission;
 };

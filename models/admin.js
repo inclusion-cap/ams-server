@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Admin.associate = function(models) {
     // associations can be defined here
+    Admin.hasMany(models.Comment);
   };
   return Admin;
 };

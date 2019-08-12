@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Campaign.associate = function(models) {
     // associations can be defined here
+    Campaign.hasMany(models.Submission);
   };
   return Campaign;
 };
