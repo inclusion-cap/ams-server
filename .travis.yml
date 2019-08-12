@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+- node
+deploy:
+  provider: heroku
+  app: dry-escarpment-95569
+  api_key:
+    secure: QdyTm0wXJx5LIXE09xl/+DY6+D9+Rni+Wvdbcwzdv5b32yXHQv1pFUq+zmUZASEjjb/Nu1T0nkoddHLWzsysrVlVQ/aarjvIRn/ZoDfY/pTJoG3rX/3vlDwXNSfs7vebzi5LdFe7xx0IzUUypJOKBshNiYiIqOiJXXAF3hj1gOTFs9lXjGgy/d0AquNb511N7gz6B/8hqu65O21hfRw+/IDSa7iBX9CmJ2+vLQIDCcBbEavpcXYwOyuFiYXgdFY/9XqkoKuKzFyTM5ZPtUOZ2YceEMzWQXDVjhQWlJxxkS+8HPV1ELylmqO1Uw3zDtnyYeyeaDsFiwVlBrfvc/oA9mpUO5h1Alm0TnEPFj5ywelqjZt+tc2l7FVpiii+Tf4TG6NSsU5aaH6b8ZjanZ8zKxjBlY2728poVp7LCpPevdACUlCRo1rn66x5dm8Y28QPdOLbzBEiQfPd28u0xmYalxcU9wxSLPnYemF5TpnDcrPi/sWpP2FUzp3UViYn5DYALoTyqBvN3gtfz5MM3DKizoK1gJa0Th0WuwVb33lu7OoNqrBZzkq3kjDNWPAh/IJr3dkH0KPLPlRffm8GWd2pnt+ldhSAd30vf/4Zylrd/5gbS4iwZZAQ5JxP3F71j0NvFVC+oQmFtu1o9eYNwIANJT8g1qG//DNP5AHAKQeeRDk=
