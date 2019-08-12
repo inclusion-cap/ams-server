@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -9,6 +9,19 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
+    return queryInterface.addColumn(
+      "Submissions", // target model
+      "campaignId", // key being added
+      {
+        type: Sequelize.UUID,
+        references: {
+          model: "Campaigns", // source model
+          key: "id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL"
+      }
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -19,5 +32,9 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+    return queryInterface.removeColumn(
+      "Submissions", // target model
+      "campaignId" // key being added
+    );
   }
 };
