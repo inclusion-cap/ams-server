@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   Comment.associate = function(models) {
     // associations can be defined here
-    Comment.belongsTo(model.Admin);
-    Comment.belongsTo(model.Submission);
+    Comment.belongsTo(models.Admin);
+    Comment.belongsTo(models.Submission);
   };
   return Comment;
 };
