@@ -10,6 +10,7 @@ const passport = require("passport");
 
 // passport setup demo index GET route
 router.get("/", function(req, res, next) {
+  console.log(req.session);
   res.render("index", { title: "Express", user: req.user });
 });
 
@@ -18,14 +19,14 @@ router.get("/login", function(req, res, next) {
   res.render("login");
 });
 
-// // passport setup demo login POST route
-// router.post(
-//   "/login",
-//   passport.authenticate("local", { failureRedirect: "/login" }),
-//   function(req, res) {
-//     res.redirect("/");
-//   }
-// );
+// passport setup demo login POST route
+router.post(
+  "/login",
+  passport.authenticate("local", { failureRedirect: "/login" }),
+  function(req, res, next) {
+    res.redirect("/");
+  }
+);
 
 // passport setup demo logout GET route
 router.get("/logout", function(req, res) {
