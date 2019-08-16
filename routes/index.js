@@ -3,11 +3,6 @@ var router = express.Router();
 
 const passport = require("passport");
 
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
 // passport setup demo index GET route
 router.get("/", function(req, res, next) {
   console.log(req.session);
