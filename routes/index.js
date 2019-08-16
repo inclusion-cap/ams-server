@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
-var models = require("../models");
+const models = require("../models");
+
+const Campaign = models.Campaign;
 
 const passport = require("passport");
 
@@ -40,11 +42,17 @@ router.get("/logout", function(req, res) {
 // );
 
 /* GET home page. */
-router.get("/campaigns", async (req, res) => {
-  // if logged in
-  var data = await models.Campaign.findAll();
-  res.status(200).json(data);
-});
+router.get(
+  "/campaigns",
+  require("connect-ensure-login").ensureLoggedIn(),
+  function(req, res, next) {
+    Campaign.findAll()
+      .then(campaigns => {
+        res.status(200).json(campaigns);
+      })
+      .catch(err => err);
+  }
+);
 
 router.post("/campaigns", async (req, res) => {
   // if logged in
