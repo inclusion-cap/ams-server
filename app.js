@@ -14,6 +14,8 @@ const Campaign = db.Campaign;
 const Submission = db.Submission;
 const Comment = db.Comment;
 
+var session = require("express-session");
+
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
@@ -58,6 +60,20 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
+
+var sess = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {}
+};
+if (app.get("env") === "production") {
+  app.set("trust proxy", 1); // trust first proxy
+  sess.cookie.secure = true; // serve secure cookies
+}
+
+app.use(session(sess));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
